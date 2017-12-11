@@ -87,9 +87,6 @@
     "pipe-naming": [true, "camelCase", "agm"],
     "component-class-suffix": false,
     "directive-class-suffix": false,
-    "import-destructuring-spacing": false,
-    "templates-use-public": true,
-    "no-access-missing-member": true,
-    "invoke-injectable": true
+    "import-destructuring-spacing": false
 	}
 }

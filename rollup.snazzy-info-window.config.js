@@ -1,6 +1,6 @@
 export default {
-  entry: 'dist/snazzy-info-window/index.js',
-  dest: 'dist/snazzy-info-window/snazzy-info-window.umd.js',
+  entry: 'dist/packages/snazzy-info-window/index.js',
+  dest: 'dist/packages/snazzy-info-window/snazzy-info-window.umd.js',
   format: 'umd',
   moduleName: 'ngmaps.snazzyInfoWindow',
   sourceMap: true,

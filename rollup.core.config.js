@@ -1,6 +1,6 @@
 export default {
-  entry: 'dist/core/index.js',
-  dest: 'dist/core/core.umd.js',
+  entry: 'dist/packages/core/index.js',
+  dest: 'dist/packages/core/core.umd.js',
   format: 'umd',
   moduleName: 'ngmaps.core',
   sourceMap: true,

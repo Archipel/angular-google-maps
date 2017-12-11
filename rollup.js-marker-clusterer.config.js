@@ -1,6 +1,6 @@
 export default {
-  entry: 'dist/js-marker-clusterer/index.js',
-  dest: 'dist/js-marker-clusterer/js-marker-clusterer.umd.js',
+  entry: 'dist/packages/js-marker-clusterer/index.js',
+  dest: 'dist/packages/js-marker-clusterer/js-marker-clusterer.umd.js',
   format: 'umd',
   moduleName: 'ngmaps.jsMarkerClusterer',
   sourceMap: true,
