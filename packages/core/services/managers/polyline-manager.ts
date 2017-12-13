@@ -37,6 +37,10 @@ export class PolylineManager {
     });
     this._polylines.set(line, polylinePromise);
   }
+  
+  getPolyline(line: AgmPolyline): Promise<Polyline>{
+      return this._polylines.get(line);
+  }
 
   updatePolylinePoints(line: AgmPolyline): Promise<void> {
     const path = PolylineManager._convertPoints(line);

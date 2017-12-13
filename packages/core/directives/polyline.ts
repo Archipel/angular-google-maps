@@ -159,6 +159,10 @@ export class AgmPolyline implements OnDestroy, OnChanges, AfterContentInit {
 
   constructor(private _polylineManager: PolylineManager) { this._id = (polylineId++).toString(); }
 
+  getPolyline(){
+      return this._polylineManager.getPolyline(this);
+  }
+  
   /** @internal */
   ngAfterContentInit() {
     if (this.points.length) {

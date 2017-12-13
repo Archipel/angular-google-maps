@@ -259,11 +259,15 @@ export interface PolylineOptions {
   zIndex?: number;
 }
 
+export interface MVCArray<T> {
+    getAt(idx: number): T;
+}
+
 export interface Polyline extends MVCObject {
   getDraggable(): boolean;
   getEditable(): boolean;
   getMap(): GoogleMap;
-  getPath(): Array<LatLng>;
+  getPath(): MVCArray<LatLng>;
   getVisible(): boolean;
   setDraggable(draggable: boolean): void;
   setEditable(editable: boolean): void;
