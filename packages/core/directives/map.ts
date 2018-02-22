@@ -316,7 +316,7 @@ export class AgmMap implements OnChanges, OnInit, OnDestroy {
    */
   @Output() mapReady: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private _elem: ElementRef, private _mapsWrapper: GoogleMapsAPIWrapper) {}
+  constructor(private _elem: ElementRef, public _mapsWrapper: GoogleMapsAPIWrapper) {}
 
   /** @internal */
   ngOnInit() {

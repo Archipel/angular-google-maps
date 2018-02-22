@@ -115,7 +115,7 @@ export class GoogleMapsAPIWrapper {
     return this._map.then((map: mapTypes.GoogleMap) => map.getBounds());
   }
 
-  getMapTypeId(): Promise<mapTypes.MapTypeId> {
+  getMapTypeId(): Promise<string|mapTypes.MapTypeId> {
     return this._map.then((map: mapTypes.GoogleMap) => map.getMapTypeId());
   }
 

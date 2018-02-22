@@ -1,26 +1,8 @@
 export var google: any;
 
-export interface GoogleMap extends MVCObject {
-  data?: Data;
-  constructor(el: HTMLElement, opts?: MapOptions): void;
-  panTo(latLng: LatLng|LatLngLiteral): void;
-  panBy(x: number, y: number): void;
-  setZoom(zoom: number): void;
-  getCenter(): LatLng;
-  setCenter(latLng: LatLng|LatLngLiteral): void;
-  getBounds(): LatLngBounds;
-  getMapTypeId(): MapTypeId;
-  getZoom(): number;
-  setOptions(options: MapOptions): void;
-  panToBounds(latLngBounds: LatLngBounds|LatLngBoundsLiteral): void;
-  fitBounds(bounds: LatLngBounds|LatLngBoundsLiteral): void;
-}
+export type GoogleMap = google.maps.Map;
 
-export interface LatLng {
-  constructor(lat: number, lng: number): void;
-  lat(): number;
-  lng(): number;
-}
+export type LatLng = google.maps.LatLng;
 
 export interface Marker extends MVCObject {
   constructor(options?: MarkerOptions): void;
@@ -94,21 +76,7 @@ export interface CircleOptions {
   zIndex?: number;
 }
 
-export interface LatLngBounds {
-  contains(latLng: LatLng): boolean;
-  equals(other: LatLngBounds|LatLngBoundsLiteral): boolean;
-  extend(point: LatLng): void;
-  getCenter(): LatLng;
-  getNorthEast(): LatLng;
-  getSouthWest(): LatLng;
-  intersects(other: LatLngBounds|LatLngBoundsLiteral): boolean;
-  isEmpty(): boolean;
-  toJSON(): LatLngBoundsLiteral;
-  toSpan(): LatLng;
-  toString(): string;
-  toUrlValue(precision?: number): string;
-  union(other: LatLngBounds|LatLngBoundsLiteral): LatLngBounds;
-}
+export type LatLngBounds = google.maps.LatLngBounds;
 
 export interface LatLngBoundsLiteral {
   east: number;
@@ -117,45 +85,11 @@ export interface LatLngBoundsLiteral {
   west: number;
 }
 
-export interface LatLngLiteral {
-  lat: number;
-  lng: number;
-}
+export type LatLngLiteral = google.maps.LatLngLiteral;
 
 export interface MouseEvent { latLng: LatLng; }
 
-export interface MapOptions {
-  center?: LatLng|LatLngLiteral;
-  zoom?: number;
-  minZoom?: number;
-  maxZoom?: number;
-  disableDoubleClickZoom?: boolean;
-  disableDefaultUI?: boolean;
-  scrollwheel?: boolean;
-  backgroundColor?: string;
-  draggable?: boolean;
-  draggableCursor?: string;
-  draggingCursor?: string;
-  keyboardShortcuts?: boolean;
-  styles?: MapTypeStyle[];
-  zoomControl?: boolean;
-  zoomControlOptions?: ZoomControlOptions;
-  streetViewControl?: boolean;
-  streetViewControlOptions?: StreetViewControlOptions;
-  scaleControl?: boolean;
-  scaleControlOptions?: ScaleControlOptions;
-  mapTypeControl?: boolean;
-  mapTypeControlOptions?: MapTypeControlOptions;
-  panControl?: boolean;
-  panControlOptions?: PanControlOptions;
-  rotateControl?: boolean;
-  rotateControlOptions?: RotateControlOptions;
-  fullscreenControl?: boolean;
-  fullscreenControlOptions?: FullscreenControlOptions;
-  mapTypeId?: string|MapTypeId;
-  clickableIcons?: boolean;
-  gestureHandling?: 'cooperative'|'greedy'|'none'|'auto';
-}
+export type MapOptions = google.maps.MapOptions;
 
 export interface MapTypeStyle {
   elementType?: 'all'|'geometry'|'geometry.fill'|'geometry.stroke'|'labels'|'labels.icon'|
@@ -434,51 +368,15 @@ export interface Geometry {
  * positioned relative to other controls in the same layout position. Controls that
  * are added first are positioned closer to the edge of the map.
  */
-export enum ControlPosition {
-  RIGHT_BOTTOM,
-  TOP_LEFT,
-  TOP_CENTER,
-  TOP_RIGHT,
-  LEFT_CENTER,
-  LEFT_TOP,
-  LEFT_BOTTOM,
-  RIGHT_TOP,
-  RIGHT_CENTER,
-  BOTTOM_RIGHT,
-  BOTTOM_LEFT,
-  BOTTOM_CENTER
-}
+export type ControlPosition = google.maps.ControlPosition;
 
-export enum MapTypeId {
-  /** This map type displays a transparent layer of major streets on satellite images. */
-  HYBRID,
-  /** This map type displays a normal street map. */
-  ROADMAP,
-  /** This map type displays satellite images. */
-  SATELLITE,
-  /** This map type displays maps with physical features such as terrain and vegetation. */
-  TERRAIN
-}
+export type MapTypeId = google.maps.MapTypeId;
 
 /***** Controls *****/
 /** Options for the rendering of the map type control. */
-export interface MapTypeControlOptions {
-  /** IDs of map types to show in the control. */
-  mapTypeIds?: (MapTypeId|string)[];
-  /**
-   * Position id. Used to specify the position of the control on the map.
-   * The default position is TOP_RIGHT.
-   */
-  position?: ControlPosition;
-  /** Style id. Used to select what style of map type control to display. */
-  style?: MapTypeControlStyle;
-}
+export type MapTypeControlOptions = google.maps.MapTypeControlOptions;
 
-export enum MapTypeControlStyle {
-  DEFAULT,
-  DROPDOWN_MENU,
-  HORIZONTAL_BAR
-}
+export type MapTypeControlStyle = google.maps.MapTypeControlStyle;
 
 export interface OverviewMapControlOptions {
   opened?: boolean;
@@ -508,9 +406,7 @@ export interface ScaleControlOptions {
   style?: ScaleControlStyle;
 }
 
-export enum ScaleControlStyle {
-  DEFAULT
-}
+export type ScaleControlStyle = google.maps.ScaleControlStyle;
 
 /** Options for the rendering of the Street View pegman control on the map. */
 export interface StreetViewControlOptions {
@@ -535,11 +431,7 @@ export interface ZoomControlOptions {
   style?: ZoomControlStyle;
 }
 
-export enum ZoomControlStyle {
-  DEFAULT,
-  LARGE,
-  SMALL
-}
+export type ZoomControlStyle = google.maps.ZoomControlStyle;
 
 /** Options for the rendering of the fullscreen control. */
 export interface FullscreenControlOptions {
